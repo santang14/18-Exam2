@@ -2,8 +2,8 @@
 Exam 2, problem 1.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, their colleagues,
-         and PUT_YOUR_NAME_HERE.  October 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Gerardo Santana.  October 2018.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -48,10 +48,10 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    # run_test_problem1a()
-    # run_test_problem1b()
-    # run_test_problem1c()
-    # run_test_problem1d()
+    run_test_problem1a()
+    run_test_problem1b()
+    run_test_problem1c()
+    run_test_problem1d()
 
 
 def run_test_problem1a():
@@ -217,8 +217,14 @@ def problem1a(strings):
       :type strings: list of str
       :rtype: list of int
     """
+    list1 = []
+    for k in range(len(strings)):
+        string = strings[k]
+        list1 = list1 + [len(string)]
+    return list1
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
@@ -390,8 +396,14 @@ def problem1b(strings):
       :type strings: list of str
       :rtype: int
     """
+    count = 0
+    for k in range(len(strings)):
+        if is_prime(len(strings[k])):
+            count = count + 1
+    return count
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
@@ -586,8 +598,12 @@ def problem1c(strings):
       :type strings: list of str
       :rtype: bool
     """
+    if is_prime(problem1b(strings)):
+        return True
+    return False
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Tests have been written for you (above).
     # See  IMPORTANT  note before the DEF line of this function.
     # -------------------------------------------------------------------------
@@ -773,8 +789,13 @@ def problem1d(strings):
       :type strings: list of str
       :rtype: str | -1
     """
+    for k in range(len(strings)):
+        if is_prime(len(strings[k])):
+            return strings[k]
+    return -1
+
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
